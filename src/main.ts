@@ -7,7 +7,7 @@ import * as config from 'config';
 async function bootstrap() {
   const serverConfig = config.get('server');
   const app = await NestFactory.create(AppModule);
-
+  app.enableCors();
   const options = new DocumentBuilder()
     .setTitle('Blog site')
     .setDescription('The blog API description')
